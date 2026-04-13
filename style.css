@@ -16,8 +16,21 @@ body {
     justify-content: flex-start;
     align-items: center;
 
-    background-color: rgb(49, 91, 129);
+    background-color: rgb(15, 55, 72);
 
     height: 100dvh;
     width: 100dvw;
+}
+
+.border {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    
+    height: 75dvh;
+    width: 50dvw;
+
+    background-color: rgb(86, 180, 220);
+    border: 15px double rgb(34, 127, 170);
 }
