@@ -5,5 +5,5 @@ api_key = os.getenv("API_KEY")
 app = Flask(__name__)
 
 @app.route("/")
-def home():
-	return "Flask installed!"
+def go_to_index():
+  return redirect("index.html")
