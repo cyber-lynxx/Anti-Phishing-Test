@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 import os
 api_key = os.getenv("API_KEY")
 
@@ -7,3 +7,7 @@ app = Flask(__name__)
 @app.route("/")
 def go_to_index():
   return redirect("index.html")
+
+@app.route("/page/<name>")
+def route(name):
+  routing = render_template(f"{name}.html")
