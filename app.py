@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def go_to_index():
-  return redirect("/#/index")
+  return redirect("/index")
 
 @app.route("/<name>")
 def route(name):
