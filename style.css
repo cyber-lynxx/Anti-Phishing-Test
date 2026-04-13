@@ -10,4 +10,11 @@ body {
     font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    background-color: rgb(49, 91, 129)
 }
