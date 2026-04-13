@@ -8,6 +8,6 @@ app = Flask(__name__)
 def go_to_index():
   return redirect("index.html")
 
-@app.route("/page/<name>")
+@app.route("/#/<name>")
 def route(name):
   routing = render_template(f"{name}.html")
