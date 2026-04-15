@@ -11,5 +11,5 @@ fetch("/excerpt2")
   .then(str => excerpt2 = str)
 
 fetch("/excerpt3")
-  .then(excerpt => excerpt.text)
+  .then(excerpt => excerpt.text())
   .then(str => excerpt3 = str)
