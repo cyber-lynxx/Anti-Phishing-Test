@@ -52,6 +52,6 @@ button {
 }
 
 ::selection {
-    background: rgb(0, 179, 89)
-    color: rgb(0, 51, 26)
+    background: rgb(0, 179, 89);
+    color: rgb(0, 51, 26);
 }
