@@ -18,16 +18,28 @@ def generate_email(prompt):
   
     excerpt1 = text[start1+len("start of email"):end1].strip()
 
+    #Sending the string/excerpt over to a JavaScript File for it to get printed on the HTML
+    @app.route("/excerpt1")
+    def send_string():
+        return excerpt1
   #
     start2 = text.find("start of answer and explanation")
     end2 = text.find("end of answer and explanation")
   
     excerpt2 = text[start2+len("start of answer and explanation"):end1].strip()
 
+    @app.route("excerpt2")
+    def send_string():
+        return excerpt2
+
     #
     start3 = text.find("here is the answer")
     end3 = text.find("answer finished")
   
     excerpt3 = text[start3+len("here is the answer"):end3].strip()
+
+    @app.route("excerpt3")
+    def send_string():
+        return excerpt3
         
   
