@@ -8,7 +8,7 @@ app = Flask(__name__, template_folder='.')
 def index():
     return render_template("index.html")
 
-@app.route("/page/<name>")
+@app.route("/<name>")
 def route(name):
     result = render_template(f"{name}.html")
     return result
