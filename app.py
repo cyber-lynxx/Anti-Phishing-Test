@@ -2,7 +2,7 @@ from flask import Flask, render_template, redirect, url_for
 import os
 api_key = os.getenv("API_KEY")
 
-app = Flask(__name__, template_folder='.')
+app = Flask(__name__)
 
 @app.route("/")
 def route_index():
