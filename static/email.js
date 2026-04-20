@@ -45,6 +45,7 @@ yesButton.addEventListener("click", () => {
   const result = yesButton.value === excerpt3.trim() ? "correct" : "incorrect";
 
   sessionStorage.setItem("explanation", excerpt2);
+  sessionStorage.setItem("user_answer", yesButton.value);
   
   window.location.href = `results?answer=${result}`;
 });
@@ -54,6 +55,7 @@ noButton.addEventListener("click", () => {
   const result = noButton.value === excerpt3.trim() ? "correct" : "incorrect";
 
   sessionStorage.setItem("explanation", excerpt2);
+  sessionStorage.setItem("user_answer", noButton.value);
   
   window.location.href = `results?answer=${result}`;
 });
