@@ -5,22 +5,8 @@ API_KEY = os.getenv("API_KEY")
 
 app = Flask(__name__)
 
-#Get the different excerpts that we need.
-def extract(text, start, end):
-    excerpt_start = text.find(start)
-    excerpt_end = text.find(end)
-    return text[excerpt_start+len(start):excerpt_end].strip()
-
-# Store the excerpts in these variables to make sure they are global
-excerpt1 = ""
-excerpt2 = ""
-excerpt3 = ""
-excerpt4 = ""
-excerpt5 = ""
-
 #Getting the output from the AI
 def generate_email():
-    global excerpt1, excerpt2, excerpt3, excerpt4
     
     client = OpenAI(api_key = API_KEY)
 
@@ -30,32 +16,10 @@ def generate_email():
     )
 
     text = response.output_text
-
-    excerpt1 = extract(text, "start of email", "end of email")
-    excerpt2 = extract(text, "start of answer and explanation", "end of answer and explanation")
-    excerpt3 = extract(text, "here is the answer", "answer finished")
-    excerpt4 = extract(text, "start of subject", "end of subject")
-    excerpt5 = extract(text, "address start", "address end")
     
 generate_email()
 
-#Sending the strings/excerpts over to a JavaScript File for it to get printed on the HTML
-@app.route("/excerpt1")
+#Sending the output to the JavaScript file to be put onto the HTML page
+@app.route("/text")
 def send_string1():
-    return excerpt1
-
-@app.route("/excerpt2")
-def send_string2():
-    return excerpt2
-
-@app.route("/excerpt3")
-def send_string3():
-    return excerpt3
-
-@app.route("/excerpt4")
-def send_string4():
-    return excerpt4
-  
-@app.route("/excerpt5")
-def send_string5():
-    return excerpt5
+    return text
