@@ -3,7 +3,7 @@ fetch("/text")
   .then(output => output.text())
   .then(str => text = str);
 
-"printing" the excerpts onto the HTML
+//"printing" the excerpts onto the HTML
 const subjectElement = document.getElementById("output");
 subjectElement.textContent = text;
 
