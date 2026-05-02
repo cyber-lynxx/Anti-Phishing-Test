@@ -1,7 +1,7 @@
 let text = "";
 
 // The email
-fetch("/text")
+fetch("https://anti-phishing-test.onrender.com/text")
   .then(output => output.text())
   .then(str => text = str);
 
