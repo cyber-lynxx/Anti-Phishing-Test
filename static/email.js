@@ -1,3 +1,5 @@
+let text = "";
+
 // The email
 fetch("/text")
   .then(output => output.text())
