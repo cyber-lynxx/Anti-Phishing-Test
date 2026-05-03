@@ -1,6 +1,6 @@
 from flask import Flask, render_template, redirect, url_for
 import os
-from gen_email.py import generate_email
+from gen_email import generate_email
 
 api_key = os.getenv("API_KEY")
 app = Flask(__name__)
