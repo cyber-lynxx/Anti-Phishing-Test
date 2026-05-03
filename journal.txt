@@ -1,0 +1,11 @@
+5/3/2026
+
+Fixes:
+- Fixed the API key and routing problems
+- Fixed the 500 errors, including the favicon.ico error
+
+Problems:
+- The AI will not generate the email if it is a phishing one
+  ~ It doesn't want to generate anything that will harm anyone
+- Will phishers copy the generated emails and use them to cause harm?
+  ~ Disclaimer or waiver needed
