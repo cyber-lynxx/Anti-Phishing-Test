@@ -1,5 +1,6 @@
 from flask import Flask, render_template, redirect, url_for
 import os
+from gen_email.py import generate_email
 
 api_key = os.getenv("API_KEY")
 app = Flask(__name__)
@@ -14,7 +15,7 @@ def favicon():
 
 @app.route("/text")
 def get_text():
-    return "your email content here", 200, {"Content-Type": "text/plain"}
+    return generate_email(), 200, {"Content-Type": "text/plain"}
 
 @app.route("/<name>")
 def route(name):
