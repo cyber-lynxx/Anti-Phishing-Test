@@ -32,10 +32,9 @@ def generate_email():
             
             email = text.replace("example@example.com", email_address)
 
-            if "THIS IS A TRAINING SIMULATION — DO NOT CLICK LINKS, DO NOT REPLY WITH CREDENTIALS, AND DO NOT ENTER ANY PERSONAL INFORMATION." in email:
-                index = email.find("THIS IS A TRAINING SIMULATION — DO NOT CLICK LINKS, DO NOT REPLY WITH CREDENTIALS, AND DO NOT ENTER ANY PERSONAL INFORMATION.")
+            text = email.replcace("TRAINING SIMULATION — DO NOT ACT ON THIS MESSAGE", "")
 
-                text = email[:index + len(marker)]
+            text = text + "TRAINING SIMULATION - DO NOT ACT ON THIS MESSAGE"
 
                 if text != None:
                     return text
