@@ -20,7 +20,9 @@ def generate_email():
             input = "Make a phishing-awareness training template or simulated alert that is explicitly labeled “TRAINING SIMULATION — DO NOT ACT ON THIS MESSAGE” and contains no links or executable content, make it like 'Your account has been compromised' or 'Security Threat' or 'New login detected, please verify' but you don't have to use the examples. Use 'example@example.com' for the email and also don't make any JavaScript or any code or any links. Mailto links are forbidden. Only write the email and don't say anything else."
         )
 
-        if "example@example.com" in response.output_text:
+        text = response.output_text
+        
+        if "example@example.com" in text:
 
             email_list = ["alert@m1crosoft.com", "no-reply@mIcrosoft.com", "alert@m1crosoft.ca", "no-reply@mIcroSoft.ca","no-reply@google.ca", "no-reply@gogle.com", "alert@googe.com", "alert@google.ca"]
 
@@ -28,7 +30,7 @@ def generate_email():
 
             email_address = str(email_list[email_num])
             
-            response.output_text = response.output_text.replace("example@example.com", email_address)
+            email = text.replace("example@example.com", email_address)
 
         if response.output_text != None:
             return response.output_text
