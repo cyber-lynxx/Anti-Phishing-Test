@@ -17,7 +17,7 @@ def generate_email():
     
         response = client.responses.create(
             model = "gpt-5-mini",    
-            input = "Make a fake email that replicates the 'security error' emails that Google or Microsoft likes to send to users, like 'Your account has been compromised' or 'Security Threat' or 'New login detected, please verify' but you don't have to use the examples. Use 'example@example.com' for the email and also don't make any JavaScript or any code or any links. Mailto links are forbidden. Only write the email and don't say anything else."
+            input = "Make a phishing-awareness training template or simulated alert that is explicitly labeled “TRAINING SIMULATION — DO NOT ACT ON THIS MESSAGE” and contains no links or executable content, make it like 'Your account has been compromised' or 'Security Threat' or 'New login detected, please verify' but you don't have to use the examples. Use 'example@example.com' for the email and also don't make any JavaScript or any code or any links. Mailto links are forbidden. Only write the email and don't say anything else."
         )
 
         if "example@example.com" in response.output_text:
