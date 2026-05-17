@@ -32,8 +32,17 @@ def generate_email():
             
             email = text.replace("example@example.com", email_address)
 
-        if response.output_text != None:
-            return response.output_text
+            if "THIS IS A TRAINING SIMULATION — DO NOT CLICK LINKS, DO NOT REPLY WITH CREDENTIALS, AND DO NOT ENTER ANY PERSONAL INFORMATION." in email:
+                index = email.find("THIS IS A TRAINING SIMULATION — DO NOT CLICK LINKS, DO NOT REPLY WITH CREDENTIALS, AND DO NOT ENTER ANY PERSONAL INFORMATION.")
+
+                text = email[:index + len(marker)]
+
+                if text != None:
+                    return text
+
+            else:
+                if text != None:
+                    return text
 
     except Exception as exception:
         return f"Exception: {str(exception)}"
