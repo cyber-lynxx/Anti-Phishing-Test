@@ -2,12 +2,12 @@ async function loadEmail() {
   try {
     const response = await fetch("https://anti-phishing-test.onrender.com/text");
 
-    // optional but good practice
+    // Stops the program and throws an error if the server responds with any non success code
     if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
 
     const text = await response.text();
 
-    // now it's safe to update the DOM
+    // Updating the DOM
     document.getElementById("output").textContent = text;
   } catch (err) {
     console.error("Failed to load email:", err);
