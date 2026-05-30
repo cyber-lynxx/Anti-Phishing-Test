@@ -44,3 +44,8 @@ def generate_email():
         return f"Exception: {str(exception)}"
 
 generate_email()
+
+#Sending the output to the JavaScript file to be put onto the HTML page
+@app.route("/text")
+def send_string1():
+    return generate_email()
