@@ -2,6 +2,7 @@ import os
 from random import randint
 from openai import OpenAI
 from flask import Flask
+
 API_KEY = os.getenv("API_KEY")
 
 app = Flask(__name__)
@@ -41,3 +42,5 @@ def generate_email():
 
     except Exception as exception:
         return f"Exception: {str(exception)}"
+
+generate_email()
