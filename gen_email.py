@@ -32,8 +32,8 @@ def generate_email():
             
             email = text.replace("example@example[.]com", email_address)
 
-                if text != None:
-                    return text
+            if text != None:
+                return text
 
             else:
                 if text != None:
