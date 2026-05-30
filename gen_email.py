@@ -22,7 +22,9 @@ def generate_email():
         )
 
         text = response.output_text
-        
+
+        email = text if text is not None else "Value is None"
+            
         if "example@example[.]com" in text:
 
             email_list = ["alert@m1crosoft.com", "no-reply@mIcrosoft.com", "alert@m1crosoft.ca", "no-reply@mIcroSoft.ca","no-reply@google.ca", "no-reply@gogle.com", "alert@googe.com", "alert@google.ca"]
@@ -33,12 +35,7 @@ def generate_email():
             
             email = text.replace("example@example[.]com", email_address)
 
-        if email != None:
-            return email
-
-        else:
-            email = "Value is None"
-            return email
+        return email
 
     except Exception as exception:
         return f"Exception: {str(exception)}"
