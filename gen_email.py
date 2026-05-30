@@ -33,12 +33,12 @@ def generate_email():
             
             email = text.replace("example@example[.]com", email_address)
 
-            if text != None:
-                return text
+        if email != None:
+            return email
 
-            else:
-                if text != None:
-                    return text
+        else:
+            email = "Value is None"
+            return email
 
     except Exception as exception:
         return f"Exception: {str(exception)}"
