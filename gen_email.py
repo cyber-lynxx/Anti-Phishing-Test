@@ -32,15 +32,25 @@ else:
     
             email = text if text is not None else "Value is None"
                 
-            if "example@example[.]com" in text:
+            if "@example[.]com" in text:
     
                 email_list = ["alert@m1crosoft.com", "no-reply@mIcrosoft.com", "alert@m1crosoft.ca", "no-reply@mIcroSoft.ca","no-reply@google.ca", "no-reply@gogle.com", "alert@googe.com", "alert@google.ca"]
-    
+
+                email_suffix_list = ["@m1crosoft.com", "@mIcrosoft.com", "@m1crosoft.ca", "@mIcroSoft.ca","@google.ca", "@gogle.com", "@googe.com", "@google.ca"]
+                
                 email_num = randint(0,7)
     
                 email_address = str(email_list[email_num])
+
+                email_address_suffix = str(email_suffix_list[email_num])
+
+                if "example@example[.]com" in text:
                 
-                email = text.replace("example@example[.]com", email_address)
+                    email = text.replace("example@example[.]com", email_address)
+
+                else:
+
+                    email = text.replace("@example[.]com", email_address_suffix)
     
             return email
     
