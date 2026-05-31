@@ -5,22 +5,22 @@ from flask import Flask
 
 API_KEY = os.getenv("API_KEY")
 
-if API_KEY == None:
-    @app.route("/text")
-    def send_string1():
-        return "API Key is None"
+app = Flask(__name__)
 
-else:
+text = "none"
 
-    app = Flask(__name__)
-    
-    text = "none"
-    
-    #Getting the output from the AI
-    def generate_email():
-        try:
-            global text
-            
+#Getting the output from the AI
+def generate_email():
+    try:
+        global text
+
+        if API_KEY == None:
+            @app.route("/text")
+            def send_string1():
+                return "API Key is None"
+
+        else:
+        
             client = OpenAI(api_key = API_KEY)
         
             response = client.responses.create(
@@ -53,7 +53,7 @@ else:
                     email = text.replace("@example[.]com", email_address_suffix)
     
             return email
-    
+        
         except Exception as exception:
             return f"Exception: {str(exception)}"
 
