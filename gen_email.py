@@ -54,8 +54,8 @@ def generate_email():
     
             return email
         
-        except Exception as exception:
-            return f"Exception: {str(exception)}"
+    except Exception as exception:
+        return f"Exception: {str(exception)}"
 
     #Sending the output to the JavaScript file to be put onto the HTML page
     @app.route("/text")
