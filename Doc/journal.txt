@@ -14,3 +14,19 @@ Problems:
   ~ It doesn't want to generate anything that will harm anyone
 - Will phishers copy the generated emails and use them to cause harm?
   ~ Disclaimer or waiver needed
+
+
+6/13/2026
+
+--------
+
+Fixes:
+- Figured out how to set the Python version
+
+-----------------------------------------------------------------------------------------
+- 500 errors
+  ~ The generated content is not being put onto the HTML page
+    > The "/text" routing is giving 500 error
+  ~ Eventlet is making ths error: Error: class uri 'eventlet' invalid or not found
+  ~ Python versions from 3.14.3 to 3.10.11 aren't working for the eventlet
+    > Is it the problem of the Python version?
