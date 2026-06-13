@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "anti-phishing-test"
+version = "0.1.0"
+description = ""
+authors = ["cyber-lynxx"]
+
+[tool.poetry.dependencies]
+python = "3.11.*"
+flask = "*"
+gunicorn = "*"
+eventlet = ">=0.33.0"
+flask-socketio = "*"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
