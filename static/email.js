@@ -1,6 +1,8 @@
 async function loadEmail() {
   try {
-    const response = await fetch("https://anti-phishing-test.onrender.com/text");
+    const response_str = await fetch("https://anti-phishing-test.onrender.com/text");
+    const response_str2 = await response_str.text()
+    const response = JSON.parse(response_str2.replace(/'/g, '"'));
 
     // Stops the program and throws an error if the server responds with any non success code
     if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
