@@ -50,14 +50,16 @@ def generate_email():
 
                 else: email = text.replace("@example[.]com", email_address_suffix)
 
-            if "*newline*" in email: formatted_email = text.replace("*newline*", "\n")
-    
-            return formatted_email
+            # Formatting the email so it's more readable
+            if "*newline*" in email:
+                email_excerpts = email.split("*newline*")                    
+
+            return str(email_excerpts)
         
     except Exception as exception:
         return f"Exception: {str(exception)}"
 
-    #Sending the output to the JavaScript file to be put onto the HTML page
-    @app.route("/text")
-    def send_string1():
-        return generate_email()
+#Sending the output to the JavaScript file to be put onto the HTML page
+@app.route("/text")
+def send_string1():
+    return generate_email()
