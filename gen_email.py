@@ -50,7 +50,7 @@ def generate_email():
 
                 else: email = text.replace("@example[.]com", email_address_suffix)
 
-            if "*newline*" in email: formatted_email = text.replace("*newline*", "<br>")
+            if "*newline*" in email: formatted_email = text.replace("*newline*", "\n")
     
             return formatted_email
         
