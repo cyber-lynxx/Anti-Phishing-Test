@@ -37,3 +37,18 @@ Fixes:
 
 Fixes:
 - Fixed the 500 error by not using Eventlet
+
+6/29/2025
+
+--------
+
+New problems:
+500 error has resurfaced
+- This is probably due to a different reason than last time, and probably has something to do with how the routing works
+- Because of how ugly the formatting looked, I split everything into excerpts in a list/array, and then I routed that list/array, then in the JavaScript file, I used JSON.parse to turn it back into an array
+-  But it throws an error again, and it says "Failed to load email: Error: HTTP error: undefined at loadEmail (email.js:8:29)" 
+
+-----------------------------------------------------------------------------------------
+
+Fixes:
+- Centered the "generating email..." heading
