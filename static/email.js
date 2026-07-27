@@ -5,9 +5,9 @@ async function loadEmail() {
     // Stops the program and throws an error if the server responds with any non success code
     if (!response_str.ok) throw new Error(`HTTP error: ${response_str.status}`);
 
-    console.log("Successfully fetched string")
+    console.log("Successfully fetched string");
     
-    const response_raw_text = await response_str.text()
+    const response_raw_text = await response_str.text();
     const response = JSON.parse(response_raw_text.replace(/'/g, '"'));
 
     console.log("String has been parsed")
@@ -22,6 +22,8 @@ async function loadEmail() {
       text = response;
     }
 
+    console.log(text);
+    
     // Updating the DOM
     document.getElementById("output").textContent = text;
   } catch (err) {
