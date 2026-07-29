@@ -33,7 +33,9 @@ async function loadEmail() {
 }
 
 loadEmail();
-// Checking the user's answer
+
+function checkAnswer() {
+  // Checking the user's answer
 const yesButton = document.getElementById("yesbutton");
 yesButton.addEventListener("click", () => {
   const result = yesButton.value === excerpt3.trim() ? "correct" : "incorrect";
@@ -49,7 +51,10 @@ noButton.addEventListener("click", () => {
   const result = noButton.value === excerpt3.trim() ? "correct" : "incorrect";
 
   sessionStorage.setItem("explanation", excerpt2);
+}
   sessionStorage.setItem("user_answer", noButton.value);
   
   window.location.href = `results?answer=${result}`;
 });
+
+checkAnswer();
