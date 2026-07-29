@@ -34,22 +34,22 @@ async function loadEmail() {
 
 loadEmail();
 // Checking the user's answer
-//const yesButton = document.getElementById("yesbutton");
-//yesButton.addEventListener("click", () => {
-  //const result = yesButton.value === excerpt3.trim() ? "correct" : "incorrect";
+const yesButton = document.getElementById("yesbutton");
+yesButton.addEventListener("click", () => {
+  const result = yesButton.value === excerpt3.trim() ? "correct" : "incorrect";
 
-  //sessionStorage.setItem("explanation", excerpt2);
-  //sessionStorage.setItem("user_answer", yesButton.value);
+  sessionStorage.setItem("explanation", excerpt2);
+  sessionStorage.setItem("user_answer", yesButton.value);
   
-  //window.location.href = `results?answer=${result}`;
-//});
+  window.location.href = `results?answer=${result}`;
+});
 
-//const noButton = document.getElementById("nobutton");
-//noButton.addEventListener("click", () => {
-  //const result = noButton.value === excerpt3.trim() ? "correct" : "incorrect";
+const noButton = document.getElementById("nobutton");
+noButton.addEventListener("click", () => {
+  const result = noButton.value === excerpt3.trim() ? "correct" : "incorrect";
 
-  //sessionStorage.setItem("explanation", excerpt2);
-  //sessionStorage.setItem("user_answer", noButton.value);
+  sessionStorage.setItem("explanation", excerpt2);
+  sessionStorage.setItem("user_answer", noButton.value);
   
-  //window.location.href = `results?answer=${result}`;
-//});
+  window.location.href = `results?answer=${result}`;
+});
