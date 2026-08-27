@@ -52,10 +52,11 @@ function checkAnswer() {
     const result = noButton.value === excerpt3.trim() ? "correct" : "incorrect";
 
     sessionStorage.setItem("explanation", excerpt2);
-  }
-    s essionStorage.setItem("user_answer", noButton.value);
+    sessionStorage.setItem("user_answer", noButton.value);
   
     window.location.href = `results?answer=${result}`;
   });
+
+}
 
 checkAnswer();
