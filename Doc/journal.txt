@@ -38,7 +38,7 @@ Fixes:
 Fixes:
 - Fixed the 500 error by not using Eventlet
 
-6/29/2025
+6/29/2026
 
 --------
 
@@ -52,3 +52,15 @@ New problems:
 
 Fixes:
 - Centered the "generating email..." heading
+
+8/31/2026
+
+--------
+
+Problems:
+502 error when you first start up the website, most likely because of a cold start or something similar, as after a little bit (after the server "warmed up") the 502 disappeared again.
+- Pay for an upgrade in Render membership to have 24/7 hosting
+
+The event listeners do not work.
+
+Some sort of game needed, think of Roblox's Grow a Garden or ConcernedApe's Stardew Valley.
