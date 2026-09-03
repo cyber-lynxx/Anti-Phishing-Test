@@ -50,9 +50,14 @@ def generate_email():
 
                 else: email = text.replace("@example[.]com", email_address_suffix)
 
+            # Removing any unnecessary text in the "email"
+            if "If this were a real incident, contact your IT or security team using your organization’s official support channels (do not use any contact details that may appear in suspicious messages)." in email:
+                email = email.replace("If this were a real incident, contact your IT or security team using your organization’s official support channels (do not use any contact details that may appear in suspicious messages).", "")
+                
+            
             # Formatting the email so it's more readable
             if "*newline*" in email:
-                email_excerpts = email.split("*newline*")                    
+                email_excerpts = email.split("*newline*")     
 
             return str(email_excerpts)
         
